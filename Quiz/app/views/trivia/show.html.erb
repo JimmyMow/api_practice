@@ -1,8 +1,27 @@
+<style type="text/css">
+  p {
+    color: red;
+  }
+</style>
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
-  <%= @trivium.title %>
+  <%#= @trivium.title %>
+  <%= best_in_place @trivium, :title %>
+</p>
+
+<% if @trivium.title == "Jack" %>
+<p>yo</p>
+<% else %>
+<p>hey</p>
+<% end %>
+
+<p>
+  <strong>Email:</strong>
+  <%#= @trivium.title %>
+  <%= best_in_place @trivium, :email %>
 </p>
 
 <ul>

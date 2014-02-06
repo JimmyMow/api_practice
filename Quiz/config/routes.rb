@@ -1,5 +1,9 @@
 Quiz::Application.routes.draw do
-  resources :questions
+  resources :users
+
+  resources :questions do
+    member { post 'vote' }
+  end
 
   resources :trivia
 

@@ -61,6 +61,17 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def vote
+    question = Question.find(params[:id])
+
+    current_user.vote_for(question)
+    redirect_to question_url(question.id)
+  end
+
+  def method_name
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_question
