@@ -1,0 +1,29 @@
+<%= form_for(@trivium) do |f| %>
+  <% if @trivium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trivium.errors.count, "error") %> prohibited this trivium from being saved:</h2>
+
+      <ul>
+      <% @trivium.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <%= f.fields_for :questions do |build| %>
+    <fieldset>
+      <%= build.label :title %>
+      <%= build.text_field :title %>
+    </fieldset>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

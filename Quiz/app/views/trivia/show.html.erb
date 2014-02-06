@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @trivium.title %>
+</p>
+
+<ul>
+  <% @trivium.questions.each do |question| %>
+    <li><%= question.title %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_trivium_path(@trivium) %> |
+<%= link_to 'Back', trivia_path %>
