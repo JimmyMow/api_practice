@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @direction.start %>
+</p>
+
+<p>
+  <strong>Finish:</strong>
+  <%= @direction.finish %>
+</p>
+
+<%= @directions_hash %>
+
+<%= link_to 'Edit', edit_direction_path(@direction) %> |
+<%= link_to 'Back', directions_path %>
