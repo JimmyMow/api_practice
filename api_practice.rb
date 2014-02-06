@@ -9,7 +9,11 @@ def google_directions(start, finish)
   string = open(url).read
   hash = JSON.parse(string)
 
-  return hash
+  lat = hash["results"].first["geometry"]["location"]["lat"]
+  long = hash["results"].first["geometry"]["location"]["lng"]
+
+  start_cords = [lat, long]
+  return start_cords
 end
 
 puts google_directions("624 Central Street", "Merchandise Mart Chicago")
